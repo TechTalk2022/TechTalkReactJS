@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TechTalkReactJS.Common\TechTalkReactJS.Common.csproj" />
+    <ProjectReference Include="..\TechTalkReactJS.DBEngine\TechTalkReactJS.DBEngine.csproj" />
+    <ProjectReference Include="..\TechTalkReactJS.Models\TechTalkReactJS.Models.csproj" />
+  </ItemGroup>
+
 </Project>

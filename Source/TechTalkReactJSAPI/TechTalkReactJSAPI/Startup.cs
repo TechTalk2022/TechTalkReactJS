@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using TechTalkReactJS.DBEngine;
+using TechTalkReactJS.Repository;
+using TechTalkReactJS.Service;
 
 namespace TechTalkReactJSAPI
 {
@@ -25,6 +28,9 @@ namespace TechTalkReactJSAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<ISQLServerHandler, SQLServerHandler>();
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IUserService, UserService>(); 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
