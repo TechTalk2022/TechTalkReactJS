@@ -3,3 +3,16 @@
 ################################################################################
 
 /Source/TechTalkReactJSAPI/.vs/TechTalkReactJSAPI/v15
+/Source/TechTalkReactJSAPI/TechTalkReactJS.Common/bin/Debug/netcoreapp2.2
+/Source/TechTalkReactJSAPI/TechTalkReactJS.Common/obj
+/Source/TechTalkReactJSAPI/TechTalkReactJS.DBEngine/bin/Debug/netcoreapp2.2
+/Source/TechTalkReactJSAPI/TechTalkReactJS.DBEngine/obj/Debug/netcoreapp2.2
+/Source/TechTalkReactJSAPI/TechTalkReactJS.DBEngine/obj
+/Source/TechTalkReactJSAPI/TechTalkReactJS.Models/bin/Debug/netcoreapp2.2
+/Source/TechTalkReactJSAPI/TechTalkReactJS.Models/obj
+/Source/TechTalkReactJSAPI/TechTalkReactJS.Repository/bin/Debug/netcoreapp2.2
+/Source/TechTalkReactJSAPI/TechTalkReactJS.Repository/obj
+/Source/TechTalkReactJSAPI/TechTalkReactJS.Service/bin/Debug/netcoreapp2.2
+/Source/TechTalkReactJSAPI/TechTalkReactJS.Service/obj
+/Source/TechTalkReactJSAPI/TechTalkReactJSAPI/bin/Debug/netcoreapp2.2
+/Source/TechTalkReactJSAPI/TechTalkReactJSAPI/obj

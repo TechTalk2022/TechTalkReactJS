@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1585
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTalkReactJS.API", "TechTalkReactJSAPI\TechTalkReactJS.API.csproj", "{42702CA9-E1B0-4580-A972-996BA80A56AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTalkReactJS.Common", "TechTalkReactJS.Common\TechTalkReactJS.Common.csproj", "{19A58DC0-AB27-4146-BE60-E72B833B0DE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTalkReactJS.DBEngine", "TechTalkReactJS.DBEngine\TechTalkReactJS.DBEngine.csproj", "{9B95FF10-5F54-4FDF-A55B-F29B13A82A40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTalkReactJS.Models", "TechTalkReactJS.Models\TechTalkReactJS.Models.csproj", "{C911DAD0-EF68-46F9-8FE9-81B7FA840F96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTalkReactJS.Repository", "TechTalkReactJS.Repository\TechTalkReactJS.Repository.csproj", "{EC69CCBB-837A-4F41-BCE4-78EC9512C9FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTalkReactJS.Service", "TechTalkReactJS.Service\TechTalkReactJS.Service.csproj", "{4E0788AA-52BE-4AF3-814F-3022049D7DBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42702CA9-E1B0-4580-A972-996BA80A56AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42702CA9-E1B0-4580-A972-996BA80A56AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42702CA9-E1B0-4580-A972-996BA80A56AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42702CA9-E1B0-4580-A972-996BA80A56AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19A58DC0-AB27-4146-BE60-E72B833B0DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19A58DC0-AB27-4146-BE60-E72B833B0DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19A58DC0-AB27-4146-BE60-E72B833B0DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19A58DC0-AB27-4146-BE60-E72B833B0DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B95FF10-5F54-4FDF-A55B-F29B13A82A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B95FF10-5F54-4FDF-A55B-F29B13A82A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B95FF10-5F54-4FDF-A55B-F29B13A82A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B95FF10-5F54-4FDF-A55B-F29B13A82A40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C911DAD0-EF68-46F9-8FE9-81B7FA840F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C911DAD0-EF68-46F9-8FE9-81B7FA840F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C911DAD0-EF68-46F9-8FE9-81B7FA840F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C911DAD0-EF68-46F9-8FE9-81B7FA840F96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC69CCBB-837A-4F41-BCE4-78EC9512C9FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC69CCBB-837A-4F41-BCE4-78EC9512C9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC69CCBB-837A-4F41-BCE4-78EC9512C9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC69CCBB-837A-4F41-BCE4-78EC9512C9FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E0788AA-52BE-4AF3-814F-3022049D7DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E0788AA-52BE-4AF3-814F-3022049D7DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E0788AA-52BE-4AF3-814F-3022049D7DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E0788AA-52BE-4AF3-814F-3022049D7DBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C43A78C-B337-43B6-BB55-0E8AE933B137}
+	EndGlobalSection
+EndGlobal
