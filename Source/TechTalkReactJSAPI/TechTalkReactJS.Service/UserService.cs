@@ -13,6 +13,7 @@ namespace TechTalkReactJS.Service
         Task<ResultArgs> GetUserById(int userId);
         Task<ResultArgs> DeleteUser(int userId);
         Task<ResultArgs> SaveUser(UserDetails user);
+        Task<ResultArgs> UserLogin(string username, string password);
 
         bool ValidateCredentials(string username, string password);
 
@@ -64,6 +65,21 @@ namespace TechTalkReactJS.Service
 
             return RresultArgs;
         }
+
+        
+        public async Task<ResultArgs> UserLogin(string username, string password)
+        {
+            var RresultArgs = new ResultArgs();
+
+            var userResult = await _userRepository.UserLogin(username, password);
+
+            RresultArgs.StatusCode = 200;
+            RresultArgs.StatusMessage = "User Login is success";
+            RresultArgs.ResultData = userResult;
+
+            return RresultArgs;
+        }
+
         public async Task<ResultArgs> DeleteUser(int userId)
         {
             var RresultArgs = new ResultArgs();
@@ -82,6 +98,8 @@ namespace TechTalkReactJS.Service
             var RresultArgs = new ResultArgs();
 
             var userId = await _userRepository.SaveUser(user);
+
+
             if (userId > 0)
             {
                 RresultArgs.StatusCode = 200;

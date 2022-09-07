@@ -35,6 +35,14 @@ namespace TechTalkReactJS.API.Controllers
         {
             return Ok(await _userService.GetUserById(userId));
         }
+        [HttpGet]
+        [ActionName("UserLogin")]
+        [Route("UserLogin")]
+        public async Task<IActionResult> UserLogin(string userName,string password)
+        {
+            return Ok(await _userService.UserLogin(userName, password));
+        }
+
         [HttpDelete]
         [ActionName("DeleteUser")]
         [Route("DeleteUser")]

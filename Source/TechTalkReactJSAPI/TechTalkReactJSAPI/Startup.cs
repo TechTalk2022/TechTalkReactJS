@@ -38,37 +38,59 @@ namespace TechTalkReactJSAPI
 
             #region Configure Swagger Basic Auth
 
-            //services.AddSwaggerGen();
+            services.AddSwaggerGen();
 
-            services.AddSwaggerGen(c =>
+
+            services.AddSwaggerGen(options =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TechTalk React JS API Services", Version = "v1" });
-                c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+                options.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Name = "Authorization",
-                    Type = SecuritySchemeType.Http,
-                    Scheme = "basic",
-                    In = ParameterLocation.Header,
-                    Description = "Basic Authorization header using the Bearer scheme."
-                });
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
+                    Version = "v1",
+                    Title = "TechTalk React JS API ServiceI",
+                    Description = "An TechTalk React JS API Service Web API for managing ToDo items",
+                    TermsOfService = new Uri("https://example.com/terms"),
+                    Contact = new OpenApiContact
                     {
-                          new OpenApiSecurityScheme
-                            {
-                                Reference = new OpenApiReference
-                                {
-                                    Type = ReferenceType.SecurityScheme,
-                                    Id = "basic"
-                                }
-                            },
-                            new string[] {}
+                        Name = "Example Contact",
+                        Url = new Uri("https://example.com/contact")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Example License",
+                        Url = new Uri("https://example.com/license")
                     }
                 });
             });
 
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "TechTalk React JS API Services", Version = "v1" });
+            //    c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+            //    {
+            //        Name = "Authorization",
+            //        Type = SecuritySchemeType.Http,
+            //        Scheme = "basic",
+            //        In = ParameterLocation.Header,
+            //        Description = "Basic Authorization header using the Bearer scheme."
+            //    });
+            //    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+            //    {
+            //        {
+            //              new OpenApiSecurityScheme
+            //                {
+            //                    Reference = new OpenApiReference
+            //                    {
+            //                        Type = ReferenceType.SecurityScheme,
+            //                        Id = "basic"
+            //                    }
+            //                },
+            //                new string[] {}
+            //        }
+            //    });
+            //});
 
-            services.AddAuthentication("BasicAuthentication").AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
+            //services.AddAuthentication("BasicAuthentication").AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
             #endregion
 

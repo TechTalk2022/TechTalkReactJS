@@ -20,6 +20,7 @@ namespace TechTalkReactJS.Common
         public const string GetUser = "usp_UserGetDetils";
         public const string GetUserList = "usp_UserGetDetilsList";
         public const string GetUserById = "usp_UserGetDetilsById";
+        public const string UserLogin = "usp_UserLogin";
         public const string SaveUser = "usp_UserSave";
 
 

@@ -15,9 +15,10 @@ namespace TechTalkReactJS.Repository
 
     public interface IUserRepository
     {
-
+        
         Task<UserDetailsResults> GetUser();
         Task<List<UserDetails>> GetUserList();
+        Task<UserDetails> UserLogin(string UserName, string Password);
         Task<UserDetails> GetUserById(int userId);
         Task<int> SaveUser(UserDetails user);
         Task DeleteUser(int userId);
@@ -66,6 +67,16 @@ namespace TechTalkReactJS.Repository
             parameters.Add("@UserId", userId, DbType.Int32, ParameterDirection.Input);
             return await _SQLServerHandler.QueryFirstOrDefaultAsync<UserDetails>(_SQLServerHandler.Connection, StroredProc.GetUserById, CommandType.StoredProcedure, parameters);
         }
+
+        public async Task<UserDetails> UserLogin(string UserName,string Password)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@UserName", UserName, DbType.String, ParameterDirection.Input);
+            parameters.Add("@Password", Password, DbType.String, ParameterDirection.Input);
+            return await _SQLServerHandler.QueryFirstOrDefaultAsync<UserDetails>(_SQLServerHandler.Connection, StroredProc.UserLogin, CommandType.StoredProcedure, parameters);
+        }
+
+
         public async Task DeleteUser(int userId)
         {
             var parameters = new DynamicParameters();
