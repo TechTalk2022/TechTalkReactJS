@@ -77,7 +77,7 @@ namespace TechTalkReactJS.Repository
             var parameters = new DynamicParameters();
             parameters.Add("@UserId", user.UserId, DbType.Int32, ParameterDirection.Input);
             parameters.Add("@FirstName", user.FirstName, DbType.String, ParameterDirection.Input);
-            parameters.Add("@LastName", user.FirstName, DbType.String, ParameterDirection.Input);
+            parameters.Add("@LastName", user.LastName, DbType.String, ParameterDirection.Input);
             parameters.Add("@UserName", user.UserName, DbType.String, ParameterDirection.Input);
             parameters.Add("@Password", user.Password, DbType.String, ParameterDirection.Input);
             parameters.Add("@MobileNo", user.MobileNo, DbType.String, ParameterDirection.Input);

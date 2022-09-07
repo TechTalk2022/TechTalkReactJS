@@ -13,6 +13,9 @@ namespace TechTalkReactJS.Service
         Task<ResultArgs> GetUserById(int userId);
         Task<ResultArgs> DeleteUser(int userId);
         Task<ResultArgs> SaveUser(UserDetails user);
+
+        bool ValidateCredentials(string username, string password);
+
     }
 
 
@@ -93,6 +96,10 @@ namespace TechTalkReactJS.Service
             return RresultArgs;
         }
 
+        public bool ValidateCredentials(string username, string password)
+        {
+            return username.Equals("jus") && password.Equals("jus");
+        }
 
     }
 }

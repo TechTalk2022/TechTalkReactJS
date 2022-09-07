@@ -6,8 +6,9 @@ namespace TechTalkReactJS.API.Controllers
     using Microsoft.AspNetCore.Mvc;
     using TechTalkReactJS.Service;
     using TechTalkReactJS.Models.Input;
+    using Microsoft.AspNetCore.Authorization;
 
-
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserDetailsController : ControllerBase
@@ -22,6 +23,7 @@ namespace TechTalkReactJS.API.Controllers
         [HttpGet]
         [ActionName("GetUser")]
         [Route("GetUser")]
+
         public async Task<IActionResult> GetUser()
         {
             return Ok(await _userService.GetUser());

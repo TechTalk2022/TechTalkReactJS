@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
+using TechTalkReactJS.API.APIAuth;
 using TechTalkReactJS.DBEngine;
 using TechTalkReactJS.Repository;
 using TechTalkReactJS.Service;
@@ -30,7 +33,50 @@ namespace TechTalkReactJSAPI
         {
             services.AddTransient<ISQLServerHandler, SQLServerHandler>();
             services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<IUserService, UserService>(); 
+            services.AddTransient<IUserService, UserService>();
+
+
+            #region Configure Swagger Basic Auth
+
+            //services.AddSwaggerGen();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TechTalk React JS API Services", Version = "v1" });
+                c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "basic",
+                    In = ParameterLocation.Header,
+                    Description = "Basic Authorization header using the Bearer scheme."
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                          new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "basic"
+                                }
+                            },
+                            new string[] {}
+                    }
+                });
+            });
+
+
+            services.AddAuthentication("BasicAuthentication").AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
+            #endregion
+
+
+
+
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -49,6 +95,13 @@ namespace TechTalkReactJSAPI
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            app.UseHttpsRedirection();
+            app.UseAuthentication();
+
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "TechTalk React JS API Services"));
         }
     }
 }
