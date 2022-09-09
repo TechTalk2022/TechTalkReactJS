@@ -7,11 +7,9 @@ namespace TechTalkReactJS.API.Controllers
     using TechTalkReactJS.Service;
     using TechTalkReactJS.Models.Input;
     using Microsoft.AspNetCore.Authorization;
+    using TechTalkReactJS.API.APIAuth;
 
-    //[Authorize]
-    [Route("api/[controller]")]
-    [ApiController]
-    public class UserDetailsController : ControllerBase
+    public class UserDetailsController : BaseController
     {
 
         private readonly IUserService _userService;
@@ -20,38 +18,33 @@ namespace TechTalkReactJS.API.Controllers
             _userService = userService;
         }
 
-        [HttpGet]
-        [ActionName("GetUser")]
+        [HttpGet] 
         [Route("GetUser")]
 
         public async Task<IActionResult> GetUser()
         {
             return Ok(await _userService.GetUser());
         }
-        [HttpGet]
-        [ActionName("GetUserById")]
+        [HttpGet] 
         [Route("GetUserById")]
         public async Task<IActionResult> GetUserById(int userId)
         {
             return Ok(await _userService.GetUserById(userId));
         }
-        [HttpGet]
-        [ActionName("UserLogin")]
+        [HttpGet] 
         [Route("UserLogin")]
         public async Task<IActionResult> UserLogin(string userName,string password)
         {
             return Ok(await _userService.UserLogin(userName, password));
         }
 
-        [HttpDelete]
-        [ActionName("DeleteUser")]
+        [HttpDelete] 
         [Route("DeleteUser")]
         public async Task<IActionResult> DeleteUser(int userId)
         {
             return Ok(await _userService.DeleteUser(userId));
         }
-        [HttpPost]
-        [ActionName("SaveUser")]
+        [HttpPost] 
         [Route("SaveUser")]
         public async Task<IActionResult> SaveUser(UserDetails users)
         {
