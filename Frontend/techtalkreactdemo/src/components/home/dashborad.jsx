@@ -4,7 +4,7 @@ import React from 'react';
 const Dashborad = () => {
     return (
 
-        <div>
+        <div className='container'>
             Welcome to Dashborad
         </div>
 

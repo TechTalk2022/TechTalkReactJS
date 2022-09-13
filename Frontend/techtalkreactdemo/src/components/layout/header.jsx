@@ -31,6 +31,11 @@ export default function Header() {
                                     User Role
                                 </NavDropdown.Item>
                             </NavDropdown>
+                            <NavDropdown title="React JS Demo" id="collasible-nav-dropdown">
+                                <NavDropdown.Item href="/view-use-state">Use State </NavDropdown.Item>
+                                <NavDropdown.Item href="/view-use-effect">Use Effect </NavDropdown.Item>
+
+                            </NavDropdown>
 
 
 
